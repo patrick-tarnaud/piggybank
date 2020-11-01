@@ -1,13 +1,18 @@
 {
   "name": "piggybank",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
+  "author": {
+    "name": "Patrick Tarnaud",
+    "email": "patrick.tarnaud@gmail.com"
+  },
+  "homepage": "http://my.homepage",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "electron:build": "vue-cli-service electron:build",
+    "electron:build": "vue-cli-service electron:build --linux pacman",
     "electron:serve": "vue-cli-service electron:serve",
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps"
