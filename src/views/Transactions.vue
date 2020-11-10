@@ -1,5 +1,5 @@
 <template>
-    <p1>Transactions {{ $route.params.account_id }}</p1>
+    <p1>Transactions {{ $route.params.accountId }}</p1>
     <!-- <v-data-table :headers="headers" :items="transactions" class="elevation-1">
     </v-data-table> -->
 </template>

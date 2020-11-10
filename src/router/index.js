@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/transations/:account_id',
+    path: '/transations/:accountId',
     name: 'transactions',
     component: Transactions
     // component: () =>
