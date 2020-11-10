@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-navigation-drawer app permanent dark color="rgb(0,0,0,0.85)" width="200px">
-      <v-list dense nav>
+      <v-list dense nav >
         <v-list-item>
           <v-list-item-icon>
             <v-icon>mdi-account</v-icon>
@@ -10,14 +10,14 @@
             <v-list-item-title>PiggyBank</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item v-for="account in accounts" :key="account.name" link :to="{ name: 'transactions', params: { account_id: account.id } }">
+        <v-list-item active-class="account_active" v-for="account in accounts" :key="account.id" link :to="{ name: 'transactions', params: { account_id: account.id } }">
           <v-list-item-content>
             <v-list-item-title  >{{ account.id }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link :to="{ name: 'about'}">
+        <v-list-item active-class="account_active" link :to="{ name: 'about'}">
           <v-list-item-content>
-            <v-list-item-title  >About</v-list-item-title>
+            <v-list-item-title >About</v-list-item-title>
           </v-list-item-content>
         </v-list-item>        
       </v-list>
@@ -112,3 +112,9 @@ export default {
   },
 }
 </script>
+<style>
+.account_active {
+  background-color: #3498db;
+}
+
+</style>
