@@ -33,11 +33,12 @@
 
 <script>
 import { mapState } from 'vuex'
+const { dialog } = require("electron").remote;
 
 export default {
   name: 'App',
 
-  data() {
+  data: function() {
     return {}
   },
   computed: {
@@ -49,8 +50,11 @@ export default {
   //   },
   // },
   methods: {
-    importFile: () => {
-      alert('Import')
+    importFile: function()  {
+      dialog.showMessageBoxSync({
+                  message: "Fichier à importer",
+                  buttons: ["OK"]
+                })
     },
   },
 }
