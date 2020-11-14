@@ -33,7 +33,8 @@
 
 <script>
 import { mapState } from 'vuex'
-const { dialog } = require("electron").remote;
+const { dialog } = require('electron').remote
+import { importOfxFile } from './imports/import-ofx'
 
 export default {
   name: 'App',
@@ -42,7 +43,7 @@ export default {
     return {}
   },
   computed: {
-    ...mapState(['accounts'])
+    ...mapState(['accounts']),
   },
   // computed: {
   //   accounts() {
@@ -50,11 +51,15 @@ export default {
   //   },
   // },
   methods: {
-    importFile: function()  {
-      dialog.showMessageBoxSync({
-                  message: "Fichier à importer",
-                  buttons: ["OK"]
-                })
+    importFile: function() {
+      let filesToImport = dialog.showOpenDialogSync({
+        filters: [
+          { name: 'Fichiers ofx', extensions: ['ofx'] },
+          { name: 'Tous les fichiers', extensions: ['*'] },
+        ],
+        properties: ['openFile', 'multiSelections'],
+      })
+      importOfxFile(filesToImport[0])
     },
   },
 }

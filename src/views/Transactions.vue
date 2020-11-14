@@ -27,14 +27,13 @@ export default {
 
     transactions: function() {
       return this.accounts.filter(account => account.id === this.$route.params.accountId)[0].transactions
-    }
+    },
   },
   methods: {
     transactionSelected: function(transaction) {
       console.log('transaction: ', transaction)
-    }
-  }
+    },
+  },
 }
 </script>
-<style>
-</style>
+<style></style>
