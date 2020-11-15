@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 const { dialog } = require('electron').remote
 import { importOfxFile } from './imports/import-ofx'
 
@@ -57,6 +57,8 @@ export default {
   //   },
   // },
   methods: {
+    ...mapActions(['setAccounts']),
+
     importFile: function() {
       let filesToImport = dialog.showOpenDialogSync({
         filters: [
@@ -67,6 +69,7 @@ export default {
       })
       importOfxFile(filesToImport[0], account => {
         console.log('importOfxFile', account)
+        this.setAccounts([account])
       })
     },
   },

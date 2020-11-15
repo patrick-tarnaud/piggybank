@@ -1,5 +1,5 @@
 <template>
-  <v-data-table :headers="headers" :items="transactions" class="elevation-1" @click:row="transactionSelected">
+  <v-data-table :headers="headers" :items="transactions" disable-pagination class="elevation-1" @click:row="transactionSelected">
     <!-- date format -->
     <template v-slot:[`item.date`]="{ item }">
       <span>{{ item.date.toLocaleString() }}</span>
