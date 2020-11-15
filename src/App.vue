@@ -51,11 +51,6 @@ export default {
   computed: {
     ...mapState(['accounts']),
   },
-  // computed: {
-  //   accounts() {
-  //     return this.$store.state.accounts
-  //   },
-  // },
   methods: {
     ...mapActions(['setAccounts']),
 
