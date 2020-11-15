@@ -54,7 +54,7 @@ export default {
   methods: {
     ...mapActions(['setAccounts']),
 
-    importFile: function() {
+    importFile: async function() {
       let filesToImport = dialog.showOpenDialogSync({
         filters: [
           { name: 'Fichiers ofx', extensions: ['ofx'] },
@@ -62,10 +62,8 @@ export default {
         ],
         properties: ['openFile'],
       })
-      importOfxFile(filesToImport[0], account => {
-        console.log('importOfxFile', account)
-        this.setAccounts([account])
-      })
+      let account = await importOfxFile(filesToImport[0])
+      this.setAccounts([account])
     },
   },
 }
