@@ -10,7 +10,13 @@
             <v-list-item-title>PiggyBank</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item active-class="account-active" v-for="account in accounts" :key="account.id" link :to="{ name: 'transactions', params: { accountId: account.id } }">
+        <v-list-item
+          active-class="account-active"
+          v-for="account in accounts"
+          :key="account.id"
+          link
+          :to="{ name: 'transactions', params: { accountId: account.id } }"
+        >
           <v-list-item-content>
             <v-list-item-title>{{ account.id }}</v-list-item-title>
           </v-list-item-content>
@@ -57,9 +63,11 @@ export default {
           { name: 'Fichiers ofx', extensions: ['ofx'] },
           { name: 'Tous les fichiers', extensions: ['*'] },
         ],
-        properties: ['openFile', 'multiSelections'],
+        properties: ['openFile'],
       })
-      importOfxFile(filesToImport[0])
+      importOfxFile(filesToImport[0], account => {
+        console.log('importOfxFile', account)
+      })
     },
   },
 }
