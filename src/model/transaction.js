@@ -8,15 +8,15 @@ class Transaction {
    * Constructor
    *
    * @param {string} id
-   * @param {date} date
+   * @param {date} dateTx
    * @param {TransactionTypeEnum} type
    * @param {string} name
    * @param {string} memo
    * @param {number} amount
    */
-  constructor(id, date, type, name, memo, amount) {
+  constructor(id, dateTx, type, name, memo, amount) {
     this.id = id
-    this.date = date
+    this.dateTx = dateTx
     this.type = type
     this.name = name
     this.memo = memo

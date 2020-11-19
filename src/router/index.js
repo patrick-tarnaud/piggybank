@@ -9,21 +9,21 @@ const routes = [
   {
     path: '/transations/:accountId',
     name: 'transactions',
-    component: Transactions
+    component: Transactions,
     // component: () =>
     //   import(/* webpackChunkName: 'about' */ '@/views/Transactions.vue')
   },
   {
     path: '/about',
     name: 'about',
-    component: About
-  }
+    component: About,
+  },
 ]
 
 const router = new VueRouter({
-  // mode: 'history',
+  mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
 })
 
 export default router
